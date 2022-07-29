@@ -26,6 +26,8 @@ const reportPost = (id) => {
   reportedPostsId.push(id);
   const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
   showPosts(remainingPosts);
+  //reported posts are removing from home and visible from eye btn
+
 };
 
 const displayContent = (text) => {
@@ -148,6 +150,7 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+  document.getElementById("liked").innerHTML = ""; // removing previous div //error 6
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
@@ -156,6 +159,7 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+  document.getElementById("reported").innerHTML = ""; // removing previous div //error 6
   const reportedPosts = getReportedPosts();
   reportedPosts.forEach((post) => {
     const div = createPost(post);
