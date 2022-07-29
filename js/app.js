@@ -18,6 +18,7 @@ const isLiked = (id) => {
 const addToLiked = (id) => {
   likedPostsId.push(id);
   //previously here likedPostsId.post(id); written so that liked button had not worked
+
   showPosts(posts);
 };
 
